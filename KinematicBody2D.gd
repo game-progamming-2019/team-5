@@ -34,6 +34,8 @@ func get_input():
 		$AnimatedSprite.play("idle")
 	if Input.is_action_just_released("ui_right"):
 		$AnimatedSprite.play("idle")
+	if Input.is_action_just_released("ui_up"):
+		$AnimatedSprite.play("idle")
 	
 	
 
