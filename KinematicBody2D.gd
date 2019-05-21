@@ -13,20 +13,20 @@ func _ready():
 	pass # Replace with function body.
 	
 func get_input():
-	if Input.is_key_pressed(KEY_D):
+	if Input.is_action_pressed("ui_right"):
 		$AnimatedSprite.play("run")
 		$Position2D.position.x = 265
 		$Position2D.rotation_degrees = -90
 		$AnimatedSprite.flip_h = false
 		
 		velocity.x = speed
-	if Input.is_key_pressed(KEY_A):
+	if Input.is_action_pressed("ui_left"):
 		$AnimatedSprite.play("run")
 		$Position2D.position.x = -265
 		$Position2D.rotation_degrees = 90
 		$AnimatedSprite.flip_h = true
 		velocity.x = -speed
-	if is_on_floor() && Input.is_key_pressed(KEY_SPACE):
+	if is_on_floor() && Input.is_action_pressed("ui_up"):
 		velocity.y = -jumpspeed
 		$AnimatedSprite.play("jump")
 		snapVector = Vector2(0,0)
