@@ -30,6 +30,10 @@ func get_input():
 		velocity.y = -jumpspeed
 		$AnimatedSprite.play("jump")
 		snapVector = Vector2(0,0)
+	if Input.is_action_just_released("ui_left"):
+		$AnimatedSprite.play("idle")
+	if Input.is_action_just_released("ui_right"):
+		$AnimatedSprite.play("idle")
 	
 	
 
