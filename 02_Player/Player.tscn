@@ -1,0 +1,26 @@
+[gd_scene load_steps=5 format=2]
+
+[ext_resource path="res://02_Player/Player.gd" type="Script" id=1]
+[ext_resource path="res://02_Player/full_game_spritesheet_player.png" type="Texture" id=2]
+[ext_resource path="res://gradient.tres" type="Gradient" id=3]
+[ext_resource path="res://02_Player/Trail.gd" type="Script" id=4]
+
+[node name="Player" type="KinematicBody2D"]
+script = ExtResource( 1 )
+
+[node name="Sprite" type="Sprite" parent="."]
+texture = ExtResource( 2 )
+region_enabled = true
+region_rect = Rect2( 128, 192, 64, 64 )
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="."]
+polygon = PoolVector2Array( -32, -26, -26, -32, 26, -32, 31.9962, -25.9807, 32, 26, 26, 32, -26, 32, -32, 26 )
+
+[node name="Trail" type="Line2D" parent="."]
+z_index = -1
+width = 12.0
+gradient = ExtResource( 3 )
+texture_mode = 768975262
+script = ExtResource( 4 )
+target_path = NodePath("../../Player")
+trail_length = 40
