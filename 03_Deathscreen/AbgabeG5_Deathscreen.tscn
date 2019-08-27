@@ -4,12 +4,8 @@
 [ext_resource path="res://03_Deathscreen/ButtonYes.gd" type="Script" id=2]
 [ext_resource path="res://03_Deathscreen/ButtonNo.gd" type="Script" id=3]
 
-
-
-
-
-[node name="Panel" type="Panel"]
-self_modulate = Color( 1, 1, 1, 0.5 )
+[node name="Deathscreen" type="Panel"]
+pause_mode = 2
 margin_right = 300.0
 margin_bottom = 40.0
 rect_pivot_offset = Vector2( 150, 20 )
@@ -40,4 +36,3 @@ margin_right = 276.148
 margin_bottom = 28.6245
 text = "No"
 script = ExtResource( 3 )
-

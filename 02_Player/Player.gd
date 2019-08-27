@@ -33,6 +33,7 @@ func resetAttributes():
 	dashed = false
 	$Sprite.region_rect = standard_sprite_region
 	$Sprite.flip_v = false
+	$Trail.clear_points()
 #####################################################
 func momGetTheCamera():
 	var camera = $"../Camera"
@@ -108,7 +109,6 @@ func _physics_process(delta):
 	
 	velocity.y += gravity*delta*fir
 	
-	#delta MUST NOT be factored into velocity here, since the _physics_process function is synced (but it has to be applied to gravity)
 	velocity.x = speed*direction.x
 	
 	#######################################
@@ -116,7 +116,7 @@ func _physics_process(delta):
 	
 	for i in get_slide_count():
 		collision = get_slide_collision(i)
-		if collision.collider.name == "Obstacles":
+		if collision.collider.name == "Obstacles" || collision.collider.name == "Obstacles2":
 			emit_signal("ImDead")
 			break
 		if collision.collider.name == "InvisiblePath":

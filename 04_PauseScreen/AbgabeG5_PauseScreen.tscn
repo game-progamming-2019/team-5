@@ -1,0 +1,59 @@
+[gd_scene load_steps=6 format=2]
+
+[ext_resource path="res://04_PauseScreen/AbgabeG5_PauseScreen.gd" type="Script" id=1]
+[ext_resource path="res://04_PauseScreen/ButtonUnpause.gd" type="Script" id=2]
+[ext_resource path="res://04_PauseScreen/ButtonMainMenu.gd" type="Script" id=3]
+[ext_resource path="res://04_PauseScreen/ButtonReset.gd" type="Script" id=4]
+[ext_resource path="res://04_PauseScreen/ButtonClose.gd" type="Script" id=5]
+
+[node name="Pausescreen" type="Panel"]
+pause_mode = 2
+margin_left = 0.880249
+margin_right = 300.88
+margin_bottom = 75.0
+rect_pivot_offset = Vector2( 150, 20 )
+script = ExtResource( 1 )
+
+[node name="Label" type="Label" parent="."]
+margin_left = 119.372
+margin_top = 7.44012
+margin_right = 179.372
+margin_bottom = 27.4401
+rect_pivot_offset = Vector2( 40, 10 )
+text = "Paused"
+align = 1
+valign = 1
+
+[node name="ButtonUnpause" type="Button" parent="."]
+margin_left = 112.743
+margin_top = 43.8344
+margin_right = 180.743
+margin_bottom = 63.8345
+text = "Unpause"
+script = ExtResource( 2 )
+
+[node name="ButtonMainMenu" type="Button" parent="."]
+margin_left = 17.6757
+margin_top = 45.1548
+margin_right = 87.6757
+margin_bottom = 65.1549
+text = "<-- Menu"
+script = ExtResource( 3 )
+
+[node name="ButtonReset" type="Button" parent="."]
+margin_left = 198.136
+margin_top = 42.9542
+margin_right = 293.136
+margin_bottom = 62.9542
+rect_pivot_offset = Vector2( -422.148, -78.6245 )
+text = "Restart Level"
+script = ExtResource( 4 )
+
+[node name="ButtonClose" type="Button" parent="."]
+margin_left = 276.142
+margin_top = 3.03887
+margin_right = 296.142
+margin_bottom = 23.0389
+rect_pivot_offset = Vector2( -422.148, -78.6245 )
+text = "X"
+script = ExtResource( 5 )

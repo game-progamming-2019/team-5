@@ -1,28 +1,56 @@
 extends Node2D
 
-export var level = 1
+export var level = 0
 export var level_total = 2
+
+var player
+var next_level
+
+signal _paused
+signal _lvlCompleted
+
 #####################################################
 #####################################################
 func lvlCompleted():
-	print("lvl-comp")
+	emit_signal("_lvlCompleted")
 #####################################################
-func changeLevel():
-	if(level + 1) <= level_total:
-		level += 1
+func nextLevel():
+	changeLevel(level+1)
+#####################################################
+func calledReset():
+	$"Player".resetAttributes()
+#####################################################
+func changeLevel(var _level):
+	if _level <= level_total:
+		level = _level
+		loadLevel(_level)
+#####################################################
+func loadLevel(var _level):
+	if(next_level != null):
+		remove_child(next_level)
+		$Player.resetAttributes()
+	var next_level_res = load("res://01_Map" + str(_level) + "/Map.tscn")
+	next_level = next_level_res.instance()
+	add_child(next_level)
 #####################################################
 func fetusDeletus():
 	remove_child($Camera)
 #####################################################
+func get_input():
+	if Input.is_action_just_pressed("ui_cancel"):
+		emit_signal("paused")
+#####################################################
 func _ready():
-	var next_level_res = load("res://01_Map" + str(level) + "/Map.tscn")
-	var next_level = next_level_res.instance()
-	add_child(next_level)
+	if(level != 0):
+		changeLevel(level)
+		var player_res = load("res://02_Player/Player.tscn")
+		player = player_res.instance()
+		add_child(player)
 	
-	var player_res = load("res://02_Player/Player.tscn")
-	var player = player_res.instance()
-	add_child(player)
+	
+	
+	connect("_paused", $"Pausescreen", "on_pause")
+	connect("_lvlCompleted", $"EOLscreen", "lvlCompleted")
 
-# Called every frame. 'delta' is the elapsed time since the previous frame.
-#func _process(delta):
-#	pass
+func _process(delta):
+	get_input()

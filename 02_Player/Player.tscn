@@ -6,6 +6,7 @@
 [ext_resource path="res://02_Player/Trail.gd" type="Script" id=4]
 
 [node name="Player" type="KinematicBody2D"]
+z_index = -1
 script = ExtResource( 1 )
 
 [node name="Sprite" type="Sprite" parent="."]
