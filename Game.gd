@@ -1,7 +1,7 @@
 extends Node2D
 
 export var level = 0
-export var level_total = 2
+export var level_total = 0
 
 var player
 var next_level
@@ -19,6 +19,10 @@ func nextLevel():
 #####################################################
 func calledReset():
 	$"Player".resetAttributes()
+	$"Deathscreen".visible = false
+	$"Pausescreen".visible = false
+	$"EOLscreen".visible = false
+	$"EOLscreen/AllLevelsCompleted".visible = false
 #####################################################
 func changeLevel(var _level):
 	if _level <= level_total:
@@ -38,7 +42,7 @@ func fetusDeletus():
 #####################################################
 func get_input():
 	if Input.is_action_just_pressed("ui_cancel"):
-		emit_signal("paused")
+		emit_signal("_paused")
 #####################################################
 func _ready():
 	if(level != 0):

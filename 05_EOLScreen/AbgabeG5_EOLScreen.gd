@@ -9,9 +9,12 @@ func lvlCompleted():
 	get_tree().paused = true
 
 func clickedNextLevel():
-	get_tree().paused = false
-	visible = !visible
-	emit_signal("nextLevel")
+	if $"..".level == $"..".level_total:
+			$AllLevelsCompleted.visible = true
+	else:
+		get_tree().paused = false
+		visible = !visible
+		emit_signal("nextLevel")
 
 func clickedClose():
 	get_tree().quit()

@@ -1,17 +1,32 @@
-[gd_scene load_steps=6 format=2]
+[gd_scene load_steps=10 format=2]
 
 [ext_resource path="res://05_EOLScreen/AbgabeG5_EOLScreen.gd" type="Script" id=1]
-[ext_resource path="res://05_EOLScreen/ButtonNextLevel.gd" type="Script" id=2]
-[ext_resource path="res://05_EOLScreen/ButtonMainMenu.gd" type="Script" id=3]
-[ext_resource path="res://05_EOLScreen/ButtonReset.gd" type="Script" id=4]
-[ext_resource path="res://05_EOLScreen/ButtonClose.gd" type="Script" id=5]
+[ext_resource path="res://05_EOLScreen/ButtonClose.gd" type="Script" id=2]
+[ext_resource path="res://00_Tileset/sp_tileset.png" type="Texture" id=3]
+[ext_resource path="res://05_EOLScreen/ButtonNextLevel.gd" type="Script" id=4]
+[ext_resource path="res://05_EOLScreen/ButtonReset.gd" type="Script" id=5]
+[ext_resource path="res://05_EOLScreen/ButtonMainMenu.gd" type="Script" id=6]
+
+[sub_resource type="AtlasTexture" id=1]
+flags = 4
+atlas = ExtResource( 3 )
+region = Rect2( 256, 192, 64, 64 )
+
+[sub_resource type="AtlasTexture" id=2]
+flags = 4
+atlas = ExtResource( 3 )
+region = Rect2( 192, 192, 64, 64 )
+
+[sub_resource type="AtlasTexture" id=3]
+flags = 4
+atlas = ExtResource( 3 )
+region = Rect2( 256, 192, 64, 64 )
 
 [node name="EOLscreen" type="Panel"]
 pause_mode = 2
 margin_left = 0.880249
 margin_right = 300.88
-margin_bottom = 75.0
-rect_pivot_offset = Vector2( 150, 20 )
+margin_bottom = 150.0
 script = ExtResource( 1 )
 
 [node name="Label" type="Label" parent="."]
@@ -19,35 +34,34 @@ margin_left = 105.01
 margin_top = 8.82998
 margin_right = 205.01
 margin_bottom = 28.83
-rect_pivot_offset = Vector2( 40, 10 )
 text = "Level Complete"
 align = 1
 valign = 1
 
-[node name="ButtonNextLevel" type="Button" parent="."]
+[node name="ButtonNextLevel_old" type="Button" parent="."]
+visible = false
 margin_left = 209.107
 margin_top = 43.8344
 margin_right = 289.107
 margin_bottom = 63.8345
 text = "Next Level"
-script = ExtResource( 2 )
 
-[node name="ButtonMainMenu" type="Button" parent="."]
+[node name="ButtonMainMenu_old" type="Button" parent="."]
+visible = false
 margin_left = 17.6757
 margin_top = 45.1548
 margin_right = 87.6757
 margin_bottom = 65.1549
 text = "<-- Menu"
-script = ExtResource( 3 )
 
-[node name="ButtonReset" type="Button" parent="."]
+[node name="ButtonReset_old" type="Button" parent="."]
+visible = false
 margin_left = 102.235
 margin_top = 44.3441
 margin_right = 197.235
 margin_bottom = 64.3441
 rect_pivot_offset = Vector2( -422.148, -78.6245 )
 text = "Restart Level"
-script = ExtResource( 4 )
 
 [node name="ButtonClose" type="Button" parent="."]
 margin_left = 276.142
@@ -56,4 +70,39 @@ margin_right = 296.142
 margin_bottom = 23.0389
 rect_pivot_offset = Vector2( -422.148, -78.6245 )
 text = "X"
+script = ExtResource( 2 )
+
+[node name="ButtonNextLevel" type="TextureButton" parent="."]
+margin_left = 212.286
+margin_top = 45.0
+margin_right = 276.286
+margin_bottom = 109.0
+texture_normal = SubResource( 1 )
+script = ExtResource( 4 )
+
+[node name="ButtonReset" type="TextureButton" parent="."]
+margin_left = 121.867
+margin_top = 45.0
+margin_right = 185.867
+margin_bottom = 109.0
+texture_normal = SubResource( 2 )
 script = ExtResource( 5 )
+
+[node name="ButtonMainMenu" type="TextureButton" parent="."]
+margin_left = 90.805
+margin_top = 45.0
+margin_right = 154.805
+margin_bottom = 109.0
+rect_scale = Vector2( -1, 1 )
+texture_normal = SubResource( 3 )
+script = ExtResource( 6 )
+
+[node name="AllLevelsCompleted" type="Label" parent="."]
+visible = false
+margin_left = 13.35
+margin_top = 120.71
+margin_right = 288.35
+margin_bottom = 140.71
+text = "All levels completed, return to Main  Menu"
+align = 1
+valign = 1

@@ -18,8 +18,8 @@ func clickedMainMenu():
 	visible = !visible
 
 func clickedReset():
-	visible = !visible
 	get_tree().paused = false
+	visible = !visible
 	emit_signal("calledReset")
 
 func get_input():

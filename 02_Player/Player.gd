@@ -9,11 +9,11 @@ var doublejump = true
 var speed = initial_speed
 var direction = Vector2(1,0)
 var velocity = Vector2(0,0)
-var friction = 0.95
 #####################################################
 var timer
 var dashed = false
 var collision
+var stepped_on_invisible = false
 #####################################################
 signal ImDead
 signal OnInvisible
@@ -29,7 +29,6 @@ func resetAttributes():
 	fir = 1
 	direction = Vector2(1,0)
 	velocity = Vector2(0,0)
-	friction = 0.95
 	dashed = false
 	$Sprite.region_rect = standard_sprite_region
 	$Sprite.flip_v = false
@@ -114,12 +113,16 @@ func _physics_process(delta):
 	#######################################
 	velocity=move_and_slide(velocity, Vector2(0,-1))
 	
+	if position.y>3000||position.y<0:
+		emit_signal("ImDead")
+	
 	for i in get_slide_count():
 		collision = get_slide_collision(i)
 		if collision.collider.name == "Obstacles" || collision.collider.name == "Obstacles2":
 			emit_signal("ImDead")
 			break
-		if collision.collider.name == "InvisiblePath":
+		if collision.collider.name == "InvisiblePath" && !stepped_on_invisible:
+			stepped_on_invisible = true
 			emit_signal("OnInvisible")
 			break
 	#######################################
