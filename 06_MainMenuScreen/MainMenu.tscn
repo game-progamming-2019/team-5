@@ -1,0 +1,52 @@
+[gd_scene load_steps=9 format=2]
+
+[ext_resource path="res://06_MainMenuScreen/MainMenu.gd" type="Script" id=1]
+[ext_resource path="res://06_MainMenuScreen/Space_titlescreen.png" type="Texture" id=2]
+[ext_resource path="res://00_Tileset/sp_tileset.png" type="Texture" id=3]
+[ext_resource path="res://06_MainMenuScreen/ButtonLevelSelect.gd" type="Script" id=4]
+[ext_resource path="res://06_MainMenuScreen/ButtonPlay.gd" type="Script" id=5]
+[ext_resource path="res://06_MainMenuScreen/ButtonClose.gd" type="Script" id=6]
+
+[sub_resource type="AtlasTexture" id=1]
+flags = 4
+atlas = ExtResource( 3 )
+region = Rect2( 256, 128, 64, 64 )
+
+[sub_resource type="AtlasTexture" id=2]
+flags = 4
+atlas = ExtResource( 3 )
+region = Rect2( 192, 64, 64, 64 )
+
+[node name="MainMenuScreen" type="Panel"]
+margin_right = 1280.0
+margin_bottom = 768.0
+script = ExtResource( 1 )
+
+[node name="BackgroundImage" type="TextureRect" parent="."]
+margin_right = 1280.0
+margin_bottom = 768.0
+texture = ExtResource( 2 )
+
+[node name="ButtonLevelSelect" type="TextureButton" parent="."]
+margin_left = 672.0
+margin_top = 435.0
+margin_right = 736.0
+margin_bottom = 499.0
+texture_normal = SubResource( 1 )
+script = ExtResource( 4 )
+
+[node name="ButtonPlay" type="TextureButton" parent="."]
+margin_left = 544.0
+margin_top = 435.0
+margin_right = 608.0
+margin_bottom = 499.0
+texture_normal = SubResource( 2 )
+script = ExtResource( 5 )
+
+[node name="ButtonClose" type="Button" parent="."]
+margin_left = 1011.12
+margin_top = 92.2312
+margin_right = 1031.12
+margin_bottom = 112.231
+text = "x"
+script = ExtResource( 6 )

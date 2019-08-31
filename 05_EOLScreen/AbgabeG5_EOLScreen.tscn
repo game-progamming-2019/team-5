@@ -38,31 +38,6 @@ text = "Level Complete"
 align = 1
 valign = 1
 
-[node name="ButtonNextLevel_old" type="Button" parent="."]
-visible = false
-margin_left = 209.107
-margin_top = 43.8344
-margin_right = 289.107
-margin_bottom = 63.8345
-text = "Next Level"
-
-[node name="ButtonMainMenu_old" type="Button" parent="."]
-visible = false
-margin_left = 17.6757
-margin_top = 45.1548
-margin_right = 87.6757
-margin_bottom = 65.1549
-text = "<-- Menu"
-
-[node name="ButtonReset_old" type="Button" parent="."]
-visible = false
-margin_left = 102.235
-margin_top = 44.3441
-margin_right = 197.235
-margin_bottom = 64.3441
-rect_pivot_offset = Vector2( -422.148, -78.6245 )
-text = "Restart Level"
-
 [node name="ButtonClose" type="Button" parent="."]
 margin_left = 276.142
 margin_top = 3.03887

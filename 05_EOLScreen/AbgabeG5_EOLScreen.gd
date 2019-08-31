@@ -2,10 +2,11 @@ extends Panel
 
 signal calledReset
 signal nextLevel
+signal calledMainMenu
 
 func lvlCompleted():
 	visible = !visible
-	rect_position=$"../Player".position+Vector2(-150,-20)
+	rect_position=$"../Player/Camera".get_camera_screen_center() + Vector2(-150, -63)
 	get_tree().paused = true
 
 func clickedNextLevel():
@@ -20,7 +21,9 @@ func clickedClose():
 	get_tree().quit()
 
 func clickedMainMenu():
+	get_tree().paused = true
 	visible = !visible
+	emit_signal("calledMainMenu")
 
 func clickedReset():
 	visible = !visible
@@ -42,6 +45,7 @@ func get_input():
 func _ready():
 	connect("calledReset", $"..", "calledReset")
 	connect("nextLevel", $"..", "nextLevel")
+	connect("calledMainMenu", $"..", "calledMainMenu")
 	
 func _process(delta):
 	if get_tree().paused == true:

@@ -1,14 +1,13 @@
-[gd_scene load_steps=7 format=2]
+[gd_scene load_steps=6 format=2]
 
 [ext_resource path="res://03_Deathscreen/AbgabeG5_Deathscreen.gd" type="Script" id=1]
-[ext_resource path="res://03_Deathscreen/ButtonNo.gd" type="Script" id=2]
-[ext_resource path="res://00_Tileset/sp_tileset.png" type="Texture" id=3]
-[ext_resource path="res://03_Deathscreen/ButtonYes.gd" type="Script" id=4]
-[ext_resource path="res://03_Deathscreen/ButtonClose.gd" type="Script" id=5]
+[ext_resource path="res://00_Tileset/sp_tileset.png" type="Texture" id=2]
+[ext_resource path="res://03_Deathscreen/ButtonYes.gd" type="Script" id=3]
+[ext_resource path="res://03_Deathscreen/ButtonClose.gd" type="Script" id=4]
 
 [sub_resource type="AtlasTexture" id=1]
 flags = 4
-atlas = ExtResource( 3 )
+atlas = ExtResource( 2 )
 region = Rect2( 192, 192, 64, 64 )
 
 [node name="Deathscreen" type="Panel"]
@@ -26,31 +25,14 @@ text = "Game Over. Continue?"
 align = 1
 valign = 1
 
-[node name="ButtonYes_old" type="Button" parent="."]
-visible = false
-margin_left = 195.046
-margin_top = 8.62446
-margin_right = 229.046
-margin_bottom = 28.6245
-text = "Yes"
-
-[node name="ButtonNo" type="Button" parent="."]
-visible = false
-margin_left = 242.148
-margin_top = 8.62446
-margin_right = 276.148
-margin_bottom = 28.6245
-text = "No"
-script = ExtResource( 2 )
-
-[node name="ButtonYes" type="TextureButton" parent="."]
+[node name="ButtonReset" type="TextureButton" parent="."]
 margin_left = 182.0
 margin_top = 43.0
 margin_right = 246.0
 margin_bottom = 107.0
 rect_scale = Vector2( -1, 1 )
 texture_normal = SubResource( 1 )
-script = ExtResource( 4 )
+script = ExtResource( 3 )
 
 [node name="ButtonClose" type="Button" parent="."]
 margin_left = 275.122
@@ -58,4 +40,4 @@ margin_top = 3.34496
 margin_right = 295.122
 margin_bottom = 23.345
 text = "x"
-script = ExtResource( 5 )
+script = ExtResource( 4 )

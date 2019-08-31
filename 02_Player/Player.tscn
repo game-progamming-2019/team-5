@@ -1,7 +1,7 @@
 [gd_scene load_steps=5 format=2]
 
 [ext_resource path="res://02_Player/Player.gd" type="Script" id=1]
-[ext_resource path="res://02_Player/full_game_spritesheet_player.png" type="Texture" id=2]
+[ext_resource path="res://00_Tileset/full_game_spritesheet_tileset.png" type="Texture" id=2]
 [ext_resource path="res://02_Player/gradient.tres" type="Gradient" id=3]
 [ext_resource path="res://02_Player/Trail.gd" type="Script" id=4]
 

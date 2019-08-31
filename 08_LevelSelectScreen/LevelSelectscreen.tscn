@@ -1,0 +1,206 @@
+[gd_scene load_steps=11 format=2]
+
+[ext_resource path="res://08_LevelSelectScreen/LevelSelectscreen.gd" type="Script" id=1]
+[ext_resource path="res://08_LevelSelectScreen/LevelSelectscreen_BG.png" type="Texture" id=2]
+[ext_resource path="res://08_LevelSelectScreen/LevelIcons/Icon_Map1.png" type="Texture" id=3]
+[ext_resource path="res://08_LevelSelectScreen/ButtonLvl1.gd" type="Script" id=4]
+[ext_resource path="res://08_LevelSelectScreen/LevelIcons/Icon_Map2.png" type="Texture" id=5]
+[ext_resource path="res://08_LevelSelectScreen/ButtonLvl2.gd" type="Script" id=6]
+[ext_resource path="res://08_LevelSelectScreen/LevelIcons/Icon_Map3.png" type="Texture" id=7]
+[ext_resource path="res://08_LevelSelectScreen/ButtonLvl3.gd" type="Script" id=8]
+[ext_resource path="res://08_LevelSelectScreen/LevelIcons/Icon_Map4.png" type="Texture" id=9]
+[ext_resource path="res://08_LevelSelectScreen/ButtonLvl4.gd" type="Script" id=10]
+
+[node name="LevelSelectscreen" type="Panel"]
+margin_right = 1280.0
+margin_bottom = 768.0
+script = ExtResource( 1 )
+
+[node name="SpaceBackground" type="TextureRect" parent="."]
+margin_right = 1280.0
+margin_bottom = 768.0
+texture = ExtResource( 2 )
+
+[node name="ButtonLvl1" type="TextureButton" parent="."]
+margin_left = 50.0
+margin_top = 50.0
+margin_right = 354.0
+margin_bottom = 354.0
+texture_normal = ExtResource( 3 )
+script = ExtResource( 4 )
+
+[node name="PanelLvl1" type="Panel" parent="."]
+editor/display_folded = true
+margin_left = 368.0
+margin_top = 50.0
+margin_right = 488.0
+margin_bottom = 210.0
+
+[node name="LevelNumber" type="Label" parent="PanelLvl1"]
+margin_right = 120.0
+margin_bottom = 40.0
+text = "Level 1"
+align = 1
+valign = 1
+
+[node name="Dash" type="Label" parent="PanelLvl1"]
+margin_top = 40.0
+margin_right = 120.0
+margin_bottom = 80.0
+text = "Dash required"
+align = 1
+valign = 1
+
+[node name="Gravity" type="Label" parent="PanelLvl1"]
+margin_top = 80.0
+margin_right = 120.0
+margin_bottom = 120.0
+text = "Gravity Change"
+align = 1
+valign = 1
+
+[node name="Invisible Path" type="Label" parent="PanelLvl1"]
+margin_top = 120.0
+margin_right = 120.0
+margin_bottom = 160.0
+text = "Invisible Path"
+align = 1
+valign = 1
+
+[node name="ButtonLvl2" type="TextureButton" parent="."]
+margin_left = 660.0
+margin_top = 50.0
+margin_right = 964.0
+margin_bottom = 354.0
+texture_normal = ExtResource( 5 )
+script = ExtResource( 6 )
+
+[node name="PanelLvl2" type="Panel" parent="."]
+editor/display_folded = true
+margin_left = 977.81
+margin_top = 50.0
+margin_right = 1097.81
+margin_bottom = 210.0
+
+[node name="LevelNumber" type="Label" parent="PanelLvl2"]
+margin_right = 120.0
+margin_bottom = 40.0
+text = "Level 2"
+align = 1
+valign = 1
+
+[node name="Dash" type="Label" parent="PanelLvl2"]
+margin_top = 40.0
+margin_right = 120.0
+margin_bottom = 80.0
+text = "Dash required"
+align = 1
+valign = 1
+
+[node name="Gravity" type="Label" parent="PanelLvl2"]
+margin_top = 80.0
+margin_right = 120.0
+margin_bottom = 120.0
+text = "Gravity Change"
+align = 1
+valign = 1
+
+[node name="Invisible Path" type="Label" parent="PanelLvl2"]
+margin_top = 120.0
+margin_right = 120.0
+margin_bottom = 160.0
+text = "Invisible Path"
+align = 1
+valign = 1
+
+[node name="ButtonLvl3" type="TextureButton" parent="."]
+margin_left = 50.0
+margin_top = 423.0
+margin_right = 354.0
+margin_bottom = 727.0
+texture_normal = ExtResource( 7 )
+script = ExtResource( 8 )
+
+[node name="PanelLvl3" type="Panel" parent="."]
+editor/display_folded = true
+margin_left = 368.0
+margin_top = 423.0
+margin_right = 488.0
+margin_bottom = 583.0
+
+[node name="LevelNumber" type="Label" parent="PanelLvl3"]
+margin_right = 120.0
+margin_bottom = 40.0
+text = "Level 3"
+align = 1
+valign = 1
+
+[node name="Dash" type="Label" parent="PanelLvl3"]
+margin_top = 40.0
+margin_right = 120.0
+margin_bottom = 80.0
+text = "Dash required"
+align = 1
+valign = 1
+
+[node name="Gravity" type="Label" parent="PanelLvl3"]
+margin_top = 80.0
+margin_right = 120.0
+margin_bottom = 120.0
+text = "Gravity Change"
+align = 1
+valign = 1
+
+[node name="Invisible Path" type="Label" parent="PanelLvl3"]
+margin_top = 120.0
+margin_right = 120.0
+margin_bottom = 160.0
+text = "Invisible Path"
+align = 1
+valign = 1
+
+[node name="ButtonLvl4" type="TextureButton" parent="."]
+margin_left = 660.0
+margin_top = 423.0
+margin_right = 964.0
+margin_bottom = 727.0
+texture_normal = ExtResource( 9 )
+script = ExtResource( 10 )
+
+[node name="PanelLvl4" type="Panel" parent="."]
+editor/display_folded = true
+margin_left = 977.81
+margin_top = 423.0
+margin_right = 1097.81
+margin_bottom = 583.0
+
+[node name="LevelNumber" type="Label" parent="PanelLvl4"]
+margin_right = 120.0
+margin_bottom = 40.0
+text = "Level 4"
+align = 1
+valign = 1
+
+[node name="Dash" type="Label" parent="PanelLvl4"]
+margin_top = 40.0
+margin_right = 120.0
+margin_bottom = 80.0
+text = "Dash required"
+align = 1
+valign = 1
+
+[node name="Gravity" type="Label" parent="PanelLvl4"]
+margin_top = 80.0
+margin_right = 120.0
+margin_bottom = 120.0
+text = "Gravity Change"
+align = 1
+valign = 1
+
+[node name="Invisible Path" type="Label" parent="PanelLvl4"]
+margin_top = 120.0
+margin_right = 120.0
+margin_bottom = 160.0
+text = "Invisible Path"
+align = 1
+valign = 1

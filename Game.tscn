@@ -1,78 +1,101 @@
-[gd_scene load_steps=9 format=2]
+[gd_scene load_steps=12 format=2]
 
 [ext_resource path="res://Game.gd" type="Script" id=1]
-[ext_resource path="res://04_PauseScreen/AbgabeG5_PauseScreen.tscn" type="PackedScene" id=2]
-[ext_resource path="res://03_Deathscreen/AbgabeG5_Deathscreen.tscn" type="PackedScene" id=3]
-[ext_resource path="res://05_EOLScreen/AbgabeG5_EOLScreen.tscn" type="PackedScene" id=4]
-[ext_resource path="res://07_ParallaxBackground/Space_holz_2.png" type="Texture" id=5]
-[ext_resource path="res://07_ParallaxBackground/Multiple_Stern_Alpha.png" type="Texture" id=6]
-[ext_resource path="res://07_ParallaxBackground/ebene3_.png" type="Texture" id=7]
-[ext_resource path="res://07_ParallaxBackground/ebene2_.png" type="Texture" id=8]
+[ext_resource path="res://09_Camera1/Camera.tscn" type="PackedScene" id=2]
+[ext_resource path="res://04_PauseScreen/AbgabeG5_PauseScreen.tscn" type="PackedScene" id=3]
+[ext_resource path="res://03_Deathscreen/AbgabeG5_Deathscreen.tscn" type="PackedScene" id=4]
+[ext_resource path="res://05_EOLScreen/AbgabeG5_EOLScreen.tscn" type="PackedScene" id=5]
+[ext_resource path="res://07_ParallaxBackground/Space_holz_2.png" type="Texture" id=6]
+[ext_resource path="res://07_ParallaxBackground/Multiple_Stern_Alpha.png" type="Texture" id=7]
+[ext_resource path="res://07_ParallaxBackground/ebene1.png" type="Texture" id=8]
+[ext_resource path="res://07_ParallaxBackground/ebene2.png" type="Texture" id=9]
+[ext_resource path="res://07_ParallaxBackground/ebene3.png" type="Texture" id=10]
+[ext_resource path="res://07_ParallaxBackground/ebene4.png" type="Texture" id=11]
 
 [node name="Game" type="Node2D"]
 script = ExtResource( 1 )
-__meta__ = {
-"_edit_lock_": true
-}
-level = 1
-level_total = 4
 
-[node name="Camera" type="Camera2D" parent="."]
-current = true
-__meta__ = {
-"_edit_lock_": true
-}
+[node name="Camera" parent="." instance=ExtResource( 2 )]
 
-[node name="Pausescreen" parent="." instance=ExtResource( 2 )]
+[node name="Pausescreen" parent="." instance=ExtResource( 3 )]
 visible = false
 
-[node name="Deathscreen" parent="." instance=ExtResource( 3 )]
+[node name="Deathscreen" parent="." instance=ExtResource( 4 )]
 visible = false
 
-[node name="EOLscreen" parent="." instance=ExtResource( 4 )]
+[node name="EOLscreen" parent="." instance=ExtResource( 5 )]
 visible = false
 
-[node name="ParallaxBackground" type="ParallaxBackground" parent="."]
+[node name="Parallax_BG_PC_Pool_Door" type="ParallaxBackground" parent="."]
 editor/display_folded = true
 layer = -3
 
-[node name="ParallaxLayer" type="ParallaxLayer" parent="ParallaxBackground"]
+[node name="Space_From_PC_Pool_Door" type="ParallaxLayer" parent="Parallax_BG_PC_Pool_Door"]
 position = Vector2( -801.665, -627.899 )
-motion_scale = Vector2( 3.5, 0 )
+motion_scale = Vector2( 2.5, 0 )
 motion_offset = Vector2( 3, 0 )
 motion_mirroring = Vector2( 8012, 1224 )
 
-[node name="Sprite" type="Sprite" parent="ParallaxBackground/ParallaxLayer"]
-texture = ExtResource( 5 )
-centered = false
-
-[node name="ParallaxLayer4" type="ParallaxLayer" parent="ParallaxBackground"]
-position = Vector2( -801.665, -627.899 )
-motion_scale = Vector2( 1.8, 0 )
-motion_offset = Vector2( 3, 0 )
-motion_mirroring = Vector2( 8012, 1224 )
-
-[node name="Sprite" type="Sprite" parent="ParallaxBackground/ParallaxLayer4"]
-modulate = Color( 1, 1, 1, 0.26 )
+[node name="Sprite" type="Sprite" parent="Parallax_BG_PC_Pool_Door/Space_From_PC_Pool_Door"]
 texture = ExtResource( 6 )
 centered = false
 
-[node name="ParallaxLayer2" type="ParallaxLayer" parent="ParallaxBackground"]
-position = Vector2( -810.939, -619.471 )
-motion_scale = Vector2( 2, 0 )
-motion_mirroring = Vector2( 3835, 1080 )
+[node name="Stars" type="ParallaxLayer" parent="Parallax_BG_PC_Pool_Door"]
+position = Vector2( -801.665, -627.899 )
+motion_scale = Vector2( 1.2, 0 )
+motion_offset = Vector2( 3, 0 )
+motion_mirroring = Vector2( 8012, 1224 )
 
-[node name="Sprite" type="Sprite" parent="ParallaxBackground/ParallaxLayer2"]
-modulate = Color( 1, 1, 1, 0.3 )
+[node name="Sprite" type="Sprite" parent="Parallax_BG_PC_Pool_Door/Stars"]
+modulate = Color( 1, 1, 1, 0.26 )
 texture = ExtResource( 7 )
 centered = false
 
-[node name="ParallaxLayer3" type="ParallaxLayer" parent="ParallaxBackground"]
+[node name="Parallax_Peter" type="ParallaxBackground" parent="."]
+editor/display_folded = true
+layer = -3
+
+[node name="Layer1" type="ParallaxLayer" parent="Parallax_Peter"]
+visible = false
+position = Vector2( -810.939, -619.471 )
+motion_scale = Vector2( 1.5, 0 )
+motion_mirroring = Vector2( 1920, 1080 )
+
+[node name="Sprite" type="Sprite" parent="Parallax_Peter/Layer1"]
+modulate = Color( 1, 1, 1, 0.223529 )
+rotation = 4.71239
+texture = ExtResource( 8 )
+centered = false
+
+[node name="Layer2" type="ParallaxLayer" parent="Parallax_Peter"]
+visible = false
 position = Vector2( -810.939, -619.471 )
 motion_scale = Vector2( 1.2, 0 )
-motion_mirroring = Vector2( 3835, 1075 )
+motion_mirroring = Vector2( 3840, 1080 )
 
-[node name="Sprite" type="Sprite" parent="ParallaxBackground/ParallaxLayer3"]
+[node name="Sprite" type="Sprite" parent="Parallax_Peter/Layer2"]
+modulate = Color( 1, 1, 1, 0.752941 )
+texture = ExtResource( 9 )
+centered = false
+
+[node name="Layer3" type="ParallaxLayer" parent="Parallax_Peter"]
+visible = false
+position = Vector2( -810.939, -619.471 )
+motion_scale = Vector2( 2.2, 0 )
+motion_mirroring = Vector2( 3840, 1080 )
+
+[node name="Sprite" type="Sprite" parent="Parallax_Peter/Layer3"]
+modulate = Color( 1, 1, 1, 0.243137 )
+texture = ExtResource( 10 )
+centered = false
+
+[node name="Layer4" type="ParallaxLayer" parent="Parallax_Peter"]
+visible = false
+position = Vector2( -810.939, -619.471 )
+motion_scale = Vector2( 1, 0 )
+motion_mirroring = Vector2( 3840, 1080 )
+
+[node name="Sprite" type="Sprite" parent="Parallax_Peter/Layer4"]
 modulate = Color( 1, 1, 1, 0.5 )
-texture = ExtResource( 8 )
+texture = ExtResource( 11 )
 centered = false

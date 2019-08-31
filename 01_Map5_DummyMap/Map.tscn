@@ -1,0 +1,38 @@
+[gd_scene load_steps=6 format=2]
+
+[ext_resource path="res://01_Map1/Map.gd" type="Script" id=1]
+[ext_resource path="res://00_Tileset/AbgabeG5_Tileset.tres" type="TileSet" id=2]
+[ext_resource path="res://01_Map1/InvisiblePath.gd" type="Script" id=3]
+[ext_resource path="res://01_Map1/LevelCompleteArea.gd" type="Script" id=4]
+
+[sub_resource type="RectangleShape2D" id=1]
+extents = Vector2( 39.9551, 127.671 )
+
+[node name="Map" type="Node2D"]
+script = ExtResource( 1 )
+__meta__ = {
+"_edit_horizontal_guides_": [  ]
+}
+
+[node name="MainMap" type="TileMap" parent="."]
+tile_set = ExtResource( 2 )
+format = 1
+tile_data = PoolIntArray( 65535, 1610612737, 0, 1, 1610612743, 0, 2, 1610612743, 0, 3, 1610612743, 0, 4, 1610612743, 0, 131071, 1610612737, 0, 65536, 1610612743, 0, 65537, 1610612743, 0, 65538, 1610612743, 0, 65539, 1610612743, 0, 65540, 1610612743, 0, 196607, 1610612737, 0, 131072, 1610612743, 0, 131073, 1610612743, 0, 131074, 1610612743, 0, 131075, 1610612743, 0, 131076, 1610612743, 0, 262143, 1610612741, 0, 196608, 1610612738, 0, 196609, 1610612738, 0, 196610, 1610612738, 0, 196611, 1610612738, 0, 196612, 1610612738, 0, 327679, 1610612747, 0, 262147, 1610612747, 0, 1114111, 4, 0, 1048576, 2, 0, 1048577, 2, 0, 1048578, 2, 0, 1048579, 2, 0, 1048580, 2, 0, 1179647, 0, 0, 1114112, 7, 0, 1114113, 7, 0, 1114114, 7, 0, 1114115, 7, 0, 1114116, 7, 0, 1245183, 0, 0, 1179648, 7, 0, 1179649, 7, 0, 1179650, 7, 0, 1179651, 7, 0, 1179652, 7, 0, 1310719, 0, 0, 1245184, 7, 0, 1245185, 7, 0, 1245186, 7, 0, 1245187, 7, 0, 1245188, 7, 0, 1376255, 0, 0, 1310720, 7, 0, 1310721, 7, 0, 1310722, 7, 0, 1310723, 7, 0, 1310724, 7, 0, 1441791, 0, 0, 1376256, 7, 0, 1376257, 7, 0, 1376258, 7, 0, 1376259, 7, 0, 1376260, 7, 0 )
+
+[node name="Obstacles" type="TileMap" parent="."]
+tile_set = ExtResource( 2 )
+format = 1
+tile_data = PoolIntArray( 327679, 1610612749, 0, 262144, 1610612748, 0, 262145, 1610612749, 0, 262146, 1610612748, 0, 262147, 1610612749, 0, 262148, 1610612749, 0, 1900543, 9, 0, 1835008, 9, 0, 1835009, 9, 0, 1835010, 9, 0, 1835011, 9, 0, 1835012, 9, 0 )
+
+[node name="InvisiblePath" type="TileMap" parent="."]
+modulate = Color( 1, 1, 1, 0 )
+tile_set = ExtResource( 2 )
+format = 1
+script = ExtResource( 3 )
+
+[node name="LevelCompleteArea" type="Area2D" parent="."]
+script = ExtResource( 4 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="LevelCompleteArea"]
+position = Vector2( 276.631, 890.008 )
+shape = SubResource( 1 )

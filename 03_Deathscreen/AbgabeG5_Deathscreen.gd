@@ -1,7 +1,7 @@
 extends Panel
 func gameover_panel():
 	visible=!visible
-	rect_position=$"../Player".position+Vector2(-150,-20)
+	rect_position=$"../Player/Camera".get_camera_screen_center() + Vector2(-150, -63)
 
 func clickedyes():
 	$"../Player/".resetAttributes()

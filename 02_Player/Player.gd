@@ -42,7 +42,6 @@ func momGetTheCamera():
 	$"..".fetusDeletus()
 	
 	add_child(camera)
-	camera.set_owner(self)
 #####################################################
 func get_input():
 	#Invert Gravity
