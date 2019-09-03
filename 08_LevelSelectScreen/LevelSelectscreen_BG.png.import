@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/LevelSelectscreen_BG.png-9d9d59aed29301105a16a97423b25db2.stex"
+path="res://.import/LevelSelectScreen_BG.png-0b7717e0b1111df7f1d3551fe6ad5140.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://08_LevelSelectScreen/LevelSelectscreen_BG.png"
-dest_files=[ "res://.import/LevelSelectscreen_BG.png-9d9d59aed29301105a16a97423b25db2.stex" ]
+source_file="res://08_LevelSelectScreen/LevelSelectScreen_BG.png"
+dest_files=[ "res://.import/LevelSelectScreen_BG.png-0b7717e0b1111df7f1d3551fe6ad5140.stex" ]
 
 [params]
 

@@ -1,7 +1,7 @@
 [gd_scene load_steps=11 format=2]
 
-[ext_resource path="res://08_LevelSelectScreen/LevelSelectscreen.gd" type="Script" id=1]
-[ext_resource path="res://08_LevelSelectScreen/LevelSelectscreen_BG.png" type="Texture" id=2]
+[ext_resource path="res://08_LevelSelectScreen/LevelSelectScreen.gd" type="Script" id=1]
+[ext_resource path="res://08_LevelSelectScreen/LevelSelectScreen_BG.png" type="Texture" id=2]
 [ext_resource path="res://08_LevelSelectScreen/LevelIcons/Icon_Map1.png" type="Texture" id=3]
 [ext_resource path="res://08_LevelSelectScreen/ButtonLvl1.gd" type="Script" id=4]
 [ext_resource path="res://08_LevelSelectScreen/LevelIcons/Icon_Map2.png" type="Texture" id=5]
@@ -11,7 +11,7 @@
 [ext_resource path="res://08_LevelSelectScreen/LevelIcons/Icon_Map4.png" type="Texture" id=9]
 [ext_resource path="res://08_LevelSelectScreen/ButtonLvl4.gd" type="Script" id=10]
 
-[node name="LevelSelectscreen" type="Panel"]
+[node name="LevelSelectScreen" type="Panel"]
 margin_right = 1280.0
 margin_bottom = 768.0
 script = ExtResource( 1 )

@@ -22,7 +22,7 @@ flags = 4
 atlas = ExtResource( 3 )
 region = Rect2( 192, 192, 64, 64 )
 
-[node name="Pausescreen" type="Panel"]
+[node name="PauseScreen" type="Panel"]
 pause_mode = 2
 margin_right = 300.0
 margin_bottom = 126.0

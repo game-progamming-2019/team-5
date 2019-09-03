@@ -1,16 +1,16 @@
 [gd_scene load_steps=6 format=2]
 
-[ext_resource path="res://03_Deathscreen/AbgabeG5_Deathscreen.gd" type="Script" id=1]
+[ext_resource path="res://03_DeathScreen/AbgabeG5_DeathScreen.gd" type="Script" id=1]
 [ext_resource path="res://00_Tileset/sp_tileset.png" type="Texture" id=2]
-[ext_resource path="res://03_Deathscreen/ButtonYes.gd" type="Script" id=3]
-[ext_resource path="res://03_Deathscreen/ButtonClose.gd" type="Script" id=4]
+[ext_resource path="res://03_DeathScreen/ButtonYes.gd" type="Script" id=3]
+[ext_resource path="res://03_DeathScreen/ButtonClose.gd" type="Script" id=4]
 
 [sub_resource type="AtlasTexture" id=1]
 flags = 4
 atlas = ExtResource( 2 )
 region = Rect2( 192, 192, 64, 64 )
 
-[node name="Deathscreen" type="Panel"]
+[node name="DeathScreen" type="Panel"]
 pause_mode = 2
 margin_right = 300.0
 margin_bottom = 126.0

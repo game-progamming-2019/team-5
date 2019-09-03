@@ -6,7 +6,7 @@
 [ext_resource path="res://01_Map1/LevelCompleteArea.gd" type="Script" id=4]
 
 [sub_resource type="RectangleShape2D" id=1]
-extents = Vector2( 39.9551, 290.463 )
+extents = Vector2( 39.9551, 234.246 )
 
 [node name="Map" type="Node2D"]
 script = ExtResource( 1 )
@@ -47,7 +47,7 @@ __meta__ = {
 }
 
 [node name="LevelCompleteArea" type="Area2D" parent="."]
-position = Vector2( 10208.4, 2261.54 )
+position = Vector2( 10198.6, 2303.82 )
 script = ExtResource( 4 )
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="LevelCompleteArea"]

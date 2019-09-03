@@ -96,7 +96,7 @@ func _ready():
 	add_child(timer)
 	
 	connect("ImDead", self, "on_gameover")
-	connect("ImDead", $"../Deathscreen", "gameover_panel")
+	connect("ImDead", $"../DeathScreen", "gameover_panel")
 	connect("OnInvisible", $"../Map", "onInvisible")
 	
 #####################################################

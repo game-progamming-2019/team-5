@@ -31,8 +31,8 @@ func pressedPlay():
 func pressedLevelSelect():
 	remove_child($"MainMenuScreen")
 	
-	var level_select_screen = load("res://08_LevelSelectScreen/LevelSelectscreen.tscn").instance()
-	add_child(level_select_screen)
+	var level_select_Screen = load("res://08_LevelSelectScreen/LevelSelectScreen.tscn").instance()
+	add_child(level_select_Screen)
 	
 	main_menu_pressed = false
 #####################################################
@@ -65,14 +65,14 @@ func calledMainMenu():
 #####################################################
 func calledReset():
 	$"Player".resetAttributes()
-	$"Deathscreen".visible = false
-	$"Pausescreen".visible = false
-	$"EOLscreen".visible = false
-	$"EOLscreen/AllLevelsCompleted".visible = false
+	$"DeathScreen".visible = false
+	$"PauseScreen".visible = false
+	$"EOLScreen".visible = false
+	$"EOLScreen/AllLevelsCompleted".visible = false
 #####################################################
 func lvl1Selected():
 	get_tree().paused = true
-	remove_child($"LevelSelectscreen")
+	remove_child($"LevelSelectScreen")
 	
 	remove_child($"Camera")
 	
@@ -84,7 +84,7 @@ func lvl1Selected():
 
 func lvl2Selected():
 	get_tree().paused = true
-	remove_child($"LevelSelectscreen")
+	remove_child($"LevelSelectScreen")
 	
 	remove_child($"Camera")
 	
@@ -96,7 +96,7 @@ func lvl2Selected():
 
 func lvl3Selected():
 	get_tree().paused = true
-	remove_child($"LevelSelectscreen")
+	remove_child($"LevelSelectScreen")
 	
 	remove_child($"Camera")
 	
@@ -108,7 +108,7 @@ func lvl3Selected():
 
 func lvl4Selected():
 	get_tree().paused = true
-	remove_child($"LevelSelectscreen")
+	remove_child($"LevelSelectScreen")
 	remove_child($"Camera")
 	
 	var camera = load("res://09_Camera1/Camera.tscn").instance()
@@ -157,8 +157,8 @@ func _ready():
 	var camera = load("res://09_Camera2/Camera.tscn").instance()
 	add_child(camera)
 	
-	connect("_paused", $"Pausescreen", "on_pause")
-	connect("_lvlCompleted", $"EOLscreen", "lvlCompleted")
+	connect("_paused", $"PauseScreen", "on_pause")
+	connect("_lvlCompleted", $"EOLScreen", "lvlCompleted")
 
 func _process(delta):
 	if(next_level != null):

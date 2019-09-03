@@ -22,7 +22,7 @@ flags = 4
 atlas = ExtResource( 3 )
 region = Rect2( 256, 192, 64, 64 )
 
-[node name="EOLscreen" type="Panel"]
+[node name="EOLScreen" type="Panel"]
 pause_mode = 2
 margin_left = 0.880249
 margin_right = 300.88

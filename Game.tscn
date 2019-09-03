@@ -3,7 +3,7 @@
 [ext_resource path="res://Game.gd" type="Script" id=1]
 [ext_resource path="res://09_Camera1/Camera.tscn" type="PackedScene" id=2]
 [ext_resource path="res://04_PauseScreen/AbgabeG5_PauseScreen.tscn" type="PackedScene" id=3]
-[ext_resource path="res://03_Deathscreen/AbgabeG5_Deathscreen.tscn" type="PackedScene" id=4]
+[ext_resource path="res://03_DeathScreen/AbgabeG5_DeathScreen.tscn" type="PackedScene" id=4]
 [ext_resource path="res://05_EOLScreen/AbgabeG5_EOLScreen.tscn" type="PackedScene" id=5]
 [ext_resource path="res://07_ParallaxBackground/Space_holz_2.png" type="Texture" id=6]
 [ext_resource path="res://07_ParallaxBackground/Multiple_Stern_Alpha.png" type="Texture" id=7]
@@ -17,13 +17,13 @@ script = ExtResource( 1 )
 
 [node name="Camera" parent="." instance=ExtResource( 2 )]
 
-[node name="Pausescreen" parent="." instance=ExtResource( 3 )]
+[node name="PauseScreen" parent="." instance=ExtResource( 3 )]
 visible = false
 
-[node name="Deathscreen" parent="." instance=ExtResource( 4 )]
+[node name="DeathScreen" parent="." instance=ExtResource( 4 )]
 visible = false
 
-[node name="EOLscreen" parent="." instance=ExtResource( 5 )]
+[node name="EOLScreen" parent="." instance=ExtResource( 5 )]
 visible = false
 
 [node name="Parallax_BG_PC_Pool_Door" type="ParallaxBackground" parent="."]
